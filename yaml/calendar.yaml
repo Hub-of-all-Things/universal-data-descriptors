@@ -1,4 +1,5 @@
-calendar:
+source: calendar
+dataset:
   - name: events
     description: List of events imported from iCal format.
     fields:
