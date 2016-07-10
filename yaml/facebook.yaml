@@ -1,0 +1,178 @@
+facebook:
+  # PROFILE
+  - name: profile
+    description: Holds information about user's Facebook profile and data associated with it.
+    fields:
+      - name: id
+        description: Person's user account ID unique to the application.
+      - name: about
+        description: The content of the 'About Me' section in the user profile.
+      - name: bio
+        description: Person's biography field.
+      - name: birthday
+        description: Person's birthday, the format may vary.
+      - name: email
+        description: Person's primary email address.
+      - name: first_name
+        description: Person's first name.
+      - name: last_name
+        description: Persons's last name.
+      - name: name
+        description: Person's full name.
+      - name: gender
+        description: Person's gender.
+      - name: is_verified
+        description: Indicates if the person's profile has been manually verified by Facebook.
+      - name: locale
+        description: Person's locale.
+      - name: political
+        description: Person's political views.
+      - name: relationship_status
+        description: Person's relationship status.
+      - name: religion
+        description: Person's religion
+      - name: quotes
+        description: Persons's favourite quote.
+      - name: timezone
+        description: Person's timezone.
+      - name: updated_time
+        description: Profile's last update time.
+      - name: verified
+        description: Indicates if the person verified profile by registering their mobile or credit card.
+      - name: website
+        description: Person's website.
+      - name: hometown
+        description: Person's hometown.
+        fields:
+          - name: id
+            description: ID of the page holding information about the person's hometown.
+          - name: name
+            description: Name of the person's hometown.
+      - name: significant_other
+        description: Person's significant other.
+        fields:
+          - name: id
+            description: Signifcant other's user ID (assume application specific).
+          - name: name
+            description: Name of the significant other.
+  # PROFILE PICTURE
+  - name: profile_picture
+    description: Person's Facebook profile picture.
+    fields:
+      - name: height
+        description: Height of the picture in pixels.
+      - name: width
+        description: Width of the picture in pixels.
+      - name: is_silhouette
+        description: Indication if the picture is default 'silhouette' picture.
+      - name: url
+        description: Link to the picture hosted on Facebook servers.
+  # EVENTS
+  - name: events
+    description: A Facebook event the user has been invited to.
+    fields:
+      - name: id
+        description: Unique event ID.
+      - name: name
+        description: Event name as defined by organizer.
+      - name: description
+        description: Custom long-form description.
+      - name: start_time
+        description: Event start time.
+      - name: end_time
+        description: Event end time.
+      - name: rsvp_status
+        description: Indication if the user is planning to attend the event.
+      - name: place
+        description: A 'common' name of where event is taking place.
+        fields:
+          - name: id
+            description: Unique place ID.
+          - name: name
+            description: Name of the place.
+          - name: location
+            description: Precise location of where event is taking place.
+            fields:
+              - name: city
+                description: Location city.
+              - name: country
+                description: Location country.
+              - name: latitude
+                description: Location latitude.
+              - name: longitude
+                description: Location longitude.
+              - name: located_in
+                description: A wider location if this locations is within it.
+              - name: name
+                description: Location name.
+              - name: state
+                description: Location state.
+              - name: street
+                description: Location street.
+              - name: zip
+                description: Location zip/postal code.
+  # POSTS
+  - name: posts
+    description: Posts published on user's timeline.
+    fields:
+      - name: id
+        description: Unique post ID.
+      - name: caption
+        description: Caption of a link in the post.
+      - name: created_time
+        description: Post's initial publication time.
+      - name: description
+        description: Description of a link in the post.
+      - name: link
+        description: Link attached to the post.
+      - name: message
+        description: Status message.
+      - name: name
+        description: Name of the link.
+      - name: object_id
+        description: ID of the uploaded photo/video attached to the post.
+      - name: picture
+        description: Any picture scraped from the link in the post.
+      - name: full_picture
+        description: Full-sized picture.
+      - name: status_type
+        description: Type of the status update.
+      - name: story
+        description: Text from stories auto-generated by Facebook. E. g. when two people become friends.
+      - name: type
+        description: Type of the post. Available types - link, status, photo, video, offer.
+      - name: updated_time
+        description: Time when the post was last edited or commented on.
+      - name: from
+        description: Infromation about the user that created the post.
+        fields:
+          - name: name
+            description: User's name.
+          - name: id
+            description: User's unique ID.
+      - name: privacy
+        description: Privacy settings.
+        fields:
+          - name: value
+            description: Privacy setting.
+          - name: description
+            description: Privacy settings description.
+          - name: friends
+            description: The group of friends that can see the post when privacy value is set to 'custom'.
+          - name: allow
+            description: List of users and friendlists able to see the post when value is 'custom'.
+          - name: deny
+            description: List of users and friendlists that are prevented from seeing the post when value is 'custom'.
+      - name: application
+        description: Information about the application the post was published by.
+        fields:
+          - name: category
+            description: Application's category.
+          - name: link
+            description: Link to the application on Facebook.
+          - name: name
+            description: Name of the application.
+          - name: namespace
+            description: Name appended to 'apps.facebook.com/' that allows navigation to applications page.
+          - name: id
+            description: Unique application ID.
