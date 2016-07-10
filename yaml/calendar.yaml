@@ -1,0 +1,22 @@
+calendar:
+  - name: events
+    description: List of events imported from iCal format.
+    fields:
+      - name: calendar_name
+        description: Name of the calendar.
+      - name: start_date
+        description: Event start date.
+      - name: end_date
+        description: Event end date.
+      - name: last_updated
+        description: The time event information was last modified.
+      - name: location
+        description: Description of event's location.
+      - name: attendees
+        description: List of people attending the event.
+      - name: summary
+        description: Short description.
+      - name: description
+        description: Long description.
+      - name: organizer
+        description: Name of event's organiser.
