@@ -1,0 +1,39 @@
+dropbox:
+  - name: files
+    description: File stored in Dropbox folder.
+    fields:
+      - name: tag
+        description: Object type tag used by Dropbox.
+      - name: name
+        description: Name of the file (with extension).
+      - name: path_lower
+        description: Lowercase path to the file in Dropbox folder.
+      - name: id
+        description: Unique ID of the file.
+      - name: client_modified
+        description: Last time the file was modified by the user.
+      - name: server_modified
+        description: Last time the file was modified on the server.
+      - name: rev
+        description: Review hash?
+      - name: size
+        description: File size in bytes.
+      - name: media_info
+        description: Extended information fields for media files.
+        fields:
+          - name: tag
+            description: Object type tag used by Dropbox.
+          - name: metadata
+            description: Metadata about the file.
+            fields:
+              - name: tag
+                description: Object type tag used by Dropbox.
+              - name: time_taken
+                description: Image capture time.
+              - name: dimensions
+                description: Image dimensions.
+                fields:
+                  - name: height
+                    description: Height of the image.
+                  - name: width
+                    description: Width of the image.
