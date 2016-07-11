@@ -1,0 +1,171 @@
+source: Rumpel
+dataset:
+  - name: profile
+    description: User profile created using Rumpel Data Browser.
+    fields:
+      - name: privacy
+        description: Privacy setting for the whole profile. True only if all subfields are private.
+      - name: personal
+        description: Personal information about the user.
+        fields:
+          - name: title
+            description: User's title.
+          - name: first_name
+            description: User's given name.
+          - name: middle_name
+            description: User's middle name.
+          - name: last_name
+            description: User's last name.
+          - name: preferred_name
+            description: Name the person likes to by called by.
+          - name: private
+            description: Privacy setting of the grouped information.
+      - name: nick
+        description: User's nickname in the system.
+        fields:
+          - name: name
+            description: Value.
+          - name: private
+            description: Privacy setting of the field.
+      - name: birth
+        description: Person's date of birth.
+        fields:
+          - name: date
+            description: Value.
+          - name: private
+            description: Privacy setting of the field.
+      - name: gender
+        description: Gender.
+        fields:
+          - name: type
+            description: Value.
+          - name: private
+            description: Privacy setting of the field.
+      - name: age
+        description: User's age group.
+        fields:
+          - name: group
+            description: Age group value.
+          - name: private
+            description: Privacy setting of the field.
+      - name: primary_email
+        description: Person's primary email address.
+        fields:
+          - name: value
+            description: Value.
+          - name: private
+            description: Privacy setting of the field.
+      - name: alternative_email
+        description: Person's secondary email address.
+        fields:
+          - name: value
+            description: Value.
+          - name: private
+            description: Privacy setting of the field.
+      - name: home_phone
+        description: Person's contact phone number.
+        fields:
+          - name: no
+            description: Phone number.
+          - name: private
+            description: Privacy setting of the field.
+      - name: mobile
+        description: Person's mobile phone number.
+        fields:
+          - name: no
+            description: Mobile number.
+          - name: private
+            description: Privacy setting of the field.
+      - name: address_details
+        description: Person's address details.
+        fields:
+          - name: no
+            description: House / flat number.
+          - name: street
+            description: Street.
+          - name: postcode
+            description: Zip (US) / postal (UK) code.
+          - name: private
+            description: Privacy setting of the grouped information.
+      - name: address_global
+        description: More general details about person's address
+        fields:
+          - name: city
+            description: City of residence.
+          - name: county
+            description: State (US) / county (UK).
+          - name: country
+            description: Country of residence.
+          - name: private
+            description: Privacy setting of the grouped information.
+      - name: website
+        description: Link to user's personal website.
+        fields:
+          - name: link
+            description: Link.
+          - name: private
+            description: Privacy setting of the field.
+      - name: blog
+        description: Link to user's personal blog.
+        fields:
+          - name: link
+            description: Link.
+          - name: private
+            description: Privacy setting of the field.
+      - name: facebook
+        description: Link to user's Facebook profile page.
+        fields:
+          - name: link
+            description: Link.
+          - name: private
+            description: Privacy setting of the field.
+      - name: linkedin
+        description: Link to user's LinkedIn profile page.
+        fields:
+          - name: link
+            description: Link.
+          - name: private
+            description: Privacy setting of the field.
+      - name: twitter
+        description: Link to user's Twitter page.
+        fields:
+          - name: link
+            description: Link.
+          - name: private
+            description: Privacy setting of the field.
+      - name: google
+        description: Link to user's Google profile page.
+        fields:
+          - name: link
+            description: Link.
+          - name: private
+            description: Privacy setting of the field.
+      - name: youtube
+        description: Link to user's YouTube channel.
+        fields:
+          - name: link
+            description: Link.
+          - name: private
+            description: Privacy setting of the field.
+      - name: emergency_contact
+        description: User's emergency contact.
+        fields:
+          - name: first_name
+            description: Contact's given name.
+          - name: last_name
+            description: Contacts's last name.
+          - name: mobile
+            description: Contact's mobile's number.
+          - name: relationship
+            description: Relationship between the user and the emergency contact.
+          - name: private
+            description: Privacy setting of the grouped information.
+      - name: about
+        description: Information about the HAT for landing page.
+        fields:
+          - name: title
+            description: Title of the page.
+          - name: body
+            description: Paragraph of text shown on HAT's landing page.
+          - name: private
+            description: Privacy setting of the grouped information.
