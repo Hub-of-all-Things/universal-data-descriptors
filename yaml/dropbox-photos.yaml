@@ -1,4 +1,5 @@
-dropbox:
+source: Photos
+dataset:
   - name: files
     description: File stored in Dropbox folder.
     fields:

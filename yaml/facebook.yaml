@@ -1,4 +1,5 @@
-facebook:
+source: Facebook
+dataset:
   # PROFILE
   - name: profile
     description: Holds information about user's Facebook profile and data associated with it.
@@ -111,7 +112,6 @@ facebook:
                 description: Location street.
               - name: zip
                 description: Location zip/postal code.
-  # POSTS
   - name: posts
     description: Posts published on user's timeline.
     fields:
