@@ -5,6 +5,11 @@ dataset:
     fields:
       - name: privacy
         description: Privacy setting for the whole profile. True only if all subfields are private.
+      - name: profile_picture
+        description: Settings relating to the profile picture.
+        fields:
+          - name: private
+          - description: Privacy setting of the field.
       - name: personal
         description: Personal information about the user.
         fields:
