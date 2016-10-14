@@ -5,11 +5,6 @@ dataset:
     fields:
       - name: privacy
         description: Privacy setting for the whole profile. True only if all subfields are private.
-      - name: profile_picture
-        description: Settings relating to the profile picture.
-        fields:
-          - name: private
-          - description: Privacy setting of the field.
       - name: personal
         description: Personal information about the user.
         fields:
@@ -174,3 +169,63 @@ dataset:
             description: Paragraph of text shown on HAT's landing page.
           - name: private
             description: Privacy setting of the grouped information.
+  - name: notablesv1
+    description: Notables allow you to create and keep your social media interactions, thoughts, blogs, shopping lists - all in one place.
+    fields:
+      - name: message
+        description: Main content body stored as a Markdown string.
+      - name: kind
+        description: Type of notable (note, list, blog).
+      - name: created_time
+        description: Creation time of the notable.
+      - name: updated_time
+        description: Last update time of the notable.
+      - name: public_until
+        description: Datetime value indicating when notable's shared status expires. If empty, notable is shared indefinitely.
+      - name: shared
+        description: Is notable shared publicly?
+      - name: shared_on
+        description: Comma-separated list of services notable is shared on.
+      - name: authorv1
+        description: Information about the author of the notable.
+        fields:
+          - name: id
+            description: Author's unique HAT ID.
+          - name: name
+            description: Author's full name.
+          - name: nick
+            description: Preferred name or nickname of the author.
+          - name: phata
+            description: Author's personal HAT address.
+          - name: photo_url
+            description: URL link to the author's profile picture.
+      - name: locationv1
+        description: Author's location at a time of notable inception.
+        fields:
+          - name: latitude
+            description: Location latitude.
+          - name: longitude
+            description: Location longitude.
+          - name: accuracy
+            description: Location accuracy.
+          - name: altitude
+            description: Location altitude.
+          - name: altitude_accuracy
+            description: Location altitude accuracy.
+          - name: heading
+            description: Direction of travel.
+          - name: speed
+            description: Speed of travel.
+          - name: shared
+            description: Is the location shared alongside notable?
+      - name: photov1
+        description: Photos associated with the notable.
+        fields:
+          - name: link
+            description: URL link to the photo associated with the notable.
+          - name: source
+            description: Photos's source.
+          - name: caption
+            description: Photo's caption.
+          - name: shared
+            description: Is the photo shared alongside notable?
