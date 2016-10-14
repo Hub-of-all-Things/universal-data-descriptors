@@ -1,4 +1,4 @@
-source: Rumpel
+source: rumpel
 dataset:
   - name: profile
     description: User profile created using Rumpel Data Browser.
