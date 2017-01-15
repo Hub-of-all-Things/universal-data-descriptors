@@ -1,0 +1,106 @@
+source: twitter
+dataset:
+  - name: tweets
+    description: List of user's tweets imported from a Twitter account.
+    fields:
+      - name: coordinates
+        description: The geographic location of this Tweet as reported by the user or client application. The inner coordinates array is formatted as geoJSON (longitude first, then latitude).
+        fields:
+#          - name: coordinates
+#            description: The longitude and latitude of the Tweet’s location, as a collection in the form [longitude, latitude].
+          - name: type
+            description: The type of data encoded in the coordinates property. This will be “Point” for Tweet coordinates fields.
+      - name: created_at
+        description: UTC time when this Tweet was created. Format: Wed Aug 27 13:08:45 +0000 2008
+      - name: favorite_count
+        description: Indicates approximately how many times this Tweet has been liked by Twitter users.
+      - name: favorited
+        description: Indicates whether this Tweet has been liked by the authenticating user.
+      - name: id
+        description: The integer representation of the unique identifier for this Tweet.
+      - name: in_reply_to_screen_name
+        description: If the represented Tweet is a reply, this field will contain the screen name of the original Tweet’s author.
+      - name: in_reply_to_status_id
+        description: If the represented Tweet is a reply, this field will contain the integer representation of the original Tweet’s ID.
+      - name: in_reply_to_user_id
+        description: If the represented Tweet is a reply, this field will contain the integer representation of the original Tweet’s author ID. This will not necessarily always be the user directly mentioned in the Tweet.
+      - name: lang
+        description: When present, indicates a BCP 47 language identifier corresponding to the machine-detected language of the Tweet text, or und if no language could be detected.
+      - name: place
+        description: When present, indicates that the tweet is associated (but not necessarily originating from) a Place.
+        fields:
+          - name: attributes
+            description: Contains a hash of variant information about the place.
+            fields:
+              - name: street_address
+                description: Street address
+              - name: locality
+                description: The city the place is in.
+              - name: region
+                description: The administrative region the place is in.
+              - name: iso3
+                description: The country code.
+              - name: postal_code
+                description: In the preferred local format for the place.
+              - name: phone
+                description: In the preferred local format for the place, include long distance code.
+              - name: twitter
+                description: Twitter screen-name, without @.
+              - name: url
+                description: Official/canonical URL for place.
+          - name: bounding_box
+            description: A bounding box of coordinates which encloses this place.
+            fields:
+#              - name: coordinates
+#                description: A series of longitude and latitude points, defining a box which will contain the Place entity this bounding box is related to. Each point is an array in the form of [longitude, latitude]. Points are grouped into an array per bounding box. Bounding box arrays are wrapped in one additional array to be compatible with the polygon notation.
+              - name: type
+                description: The type of data encoded in the coordinates property. This will be “Polygon” for bounding boxes.
+          - name: country
+            description: Name of the country containing this place.
+          - name: country_code
+            description: Shortened country code representing the country containing this place.
+          - name: full_name
+            description: Full human-readable representation of the place’s name.
+          - name: id
+            description: ID string representing this place.
+          - name: name
+            description: Short human-readable representation of the place’s name.
+          - name: place_type
+            description: The type of location represented by this place.
+          - name: url
+            description: URL representing the location of additional place metadata for this place.
+      - name: possibly_sensitive
+        description: This field only surfaces when a Tweet contains a link. The meaning of the field doesn’t pertain to the Tweet content itself, but instead it is an indicator that the URL contained in the Tweet may contain content or media identified as sensitive content.
+      - name: quoted_status_id
+        description: This field only surfaces when the Tweet is a quote Tweet. This field contains the integer value Tweet ID of the quoted Tweet.
+      - name: retweet_count
+        description: Number of times this Tweet has been retweeted.
+      - name: retweeted
+        description: Indicates whether this Tweet has been retweeted by the authenticating user.
+      - name: source
+        description: Utility used to post the Tweet, as an HTML-formatted string. Tweets from the Twitter website have a source value of web.
+      - name: text
+        description: The actual UTF-8 text of the status update. See twitter-text for details on what is currently considered valid characters.
+      - name: truncated
+        description: Indicates whether the value of the text parameter was truncated, for example, as a result of a retweet exceeding the 140 character Tweet length. Truncated text will end in ellipsis, like this ...
+      - name: user
+        description: The user who posted this Tweet.
+        fields:
+          - name: favourites_count
+            description: The number of tweets this user has favorited in the account’s lifetime.
+          - name: followers_count
+            description: The number of followers this account currently has. Under certain conditions of duress, this field will temporarily indicate “0.”
+          - name: friends_count
+            description: The number of users this account is following (AKA their “followings”). Under certain conditions of duress, this field will temporarily indicate “0.”
+          - name: id
+            description: The integer representation of the unique identifier for this User.
+          - name: lang
+            description: The BCP 47 code for the user’s self-declared user interface language. May or may not have anything to do with the content of their Tweets.
+          - name: listed_count
+            description: The number of public lists that this user is a member of.
+          - name: name
+            description: The name of the user, as they’ve defined it. Not necessarily a person’s name. Typically capped at 20 characters.
+          - name: screen_name
+            description: The screen name, handle, or alias that this user identifies themselves with. screen_names are unique but subject to change.
+          - name: statuses_count
+            description: The number of tweets (including retweets) issued by the user.
