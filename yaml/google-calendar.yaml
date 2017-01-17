@@ -1,0 +1,144 @@
+source: google
+dataset:
+  - name: events
+    description: An event on a calendar containing information such as the title, start and end times, and attendees. Events can be either single events or recurring events.
+    fields:
+      - name: calendarId
+        description: Event Calendar ID
+      - name: attendeesOmitted
+        description: Whether attendees may have been omitted from the event's representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant's response. Optional. The default is False.
+      - name: created
+        description: Creation time of the event (as a RFC3339 timestamp).
+      - name: creator
+        description: The creator of the event.
+        fields:
+          - name: displayName
+            description: The creator's name, if available.
+          - name: email
+            description: The creator's email address, if available.
+          - name: id
+            description: The creator's Profile ID, if available. It corresponds to theid field in the People collection of the Google+ API.
+          - name: self
+            description: Whether the creator corresponds to the calendar on which this copy of the event appears. The default is False.
+      - name: description
+        description: Description of the event.
+      - name: end
+        description: The (exclusive) end time of the event. For a recurring event, this is the end time of the first instance.
+        fields:
+          - name: date
+            description: The date, in the format "yyyy-mm-dd", if this is an all-day event.
+          - name: dateTime
+            description: The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone.
+          - name: timeZone
+            description: The time zone in which the time is specified. (Formatted as an IANA Time Zone Database name, e.g. "Europe/Zurich".) For recurring events this field is required and specifies the time zone in which the recurrence is expanded. For single events this field is optional and indicates a custom time zone for the event start/end.
+          - name: endTimeUnspecified
+            description: Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.
+      - name: gadget
+        description: A gadget that extends this event.
+        fields:
+          - name: display
+            description: The gadget's display mode. Optional. Possible values are 'icon' - The gadget displays next to the event's title in the calendar view; 'chip' - The gadget displays when the event is clicked.
+          - name: iconLink
+            description: The gadget's icon URL. The URL scheme must be HTTPS.
+          - name: link
+            description: The gadget's URL. The URL scheme must be HTTPS.
+          - name: title
+            description: The gadget's title.
+          - name: type
+            description: The gadget's type.
+          - name: height
+            description: The gadget's height in pixels. The height must be an integer greater than 0.
+          - name: width
+            description: The gadget's width in pixels. The width must be an integer greater than 0.
+      - name: htmlLink
+        description: An absolute link to this event in the Google Calendar Web UI.
+      - name: iCalUID
+        description: Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method. Note that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs.
+      - name: id
+        description: Opaque identifier of the event.
+      - name: location
+        description: Geographic location of the event as free-form text.
+      - name: organizer
+        description: The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in attendees with the organizer field set to True.
+        fields:
+          - name: displayName
+            description: The creator's name, if available.
+          - name: email
+            description: The creator's email address, if available.
+          - name: id
+            description: The creator's Profile ID, if available. It corresponds to theid field in the People collection of the Google+ API.
+          - name: self
+            description: Whether the creator corresponds to the calendar on which this copy of the event appears. The default is False.
+      - name: originalStartTime
+        description: For an instance of a recurring event, this is the time at which this event would start according to the recurrence data in the recurring event identified by recurringEventId.
+        fields:
+          - name: date
+            description: The date, in the format "yyyy-mm-dd", if this is an all-day event.
+          - name: dateTime
+            description: The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone.
+          - name: timeZone
+            description: The time zone in which the time is specified. (Formatted as an IANA Time Zone Database name, e.g. "Europe/Zurich".) For recurring events this field is required and specifies the time zone in which the recurrence is expanded. For single events this field is optional and indicates a custom time zone for the event start/end.
+          - name: endTimeUnspecified
+            description: Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.
+      - name: privateCopy
+        description: Whether this is a private event copy where changes are not shared with other copies on other calendars. The default is False.
+      - name: recurringEventId
+        description: For an instance of a recurring event, this is the id of the recurring event to which this instance belongs.
+      - name: reminders
+        description: Information about the event's reminders for the authenticated user.
+        fields:
+          - name: overrides
+            description: If the event doesn't use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event. The maximum number of override reminders is 5. JSON object with 'method'	(The method used by this reminder, "email" - reminders are sent via email, "sms" - reminders are sent via SMS or "popup" - reminders are sent via a UI popup) and "minutes" (Number of minutes before the start of the event when the reminder should trigger)
+          - name: useDefault
+            description: Whether the default reminders of the calendar apply to the event.
+      - name: source
+        description: Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event.
+        fields:
+          - name: title
+            description: Title of the source; for example a title of a web page or an email subject.
+          - name: url
+            description: URL of the source pointing to a resource. The URL scheme must be HTTP or HTTPS.
+      - name: start
+        description: The (inclusive) start time of the event. For a recurring event, this is the start time of the first instance.
+        fields:
+          - name: date
+            description: The date, in the format "yyyy-mm-dd", if this is an all-day event.
+          - name: dateTime
+            description: The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone.
+          - name: timeZone
+            description: The time zone in which the time is specified. (Formatted as an IANA Time Zone Database name, e.g. "Europe/Zurich".) For recurring events this field is required and specifies the time zone in which the recurrence is expanded. For single events this field is optional and indicates a custom time zone for the event start/end.
+          - name: endTimeUnspecified
+            description: Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.
+      - name: status
+        description: Status of the event. Optional. Possible values are 'confirmed' - The event is confirmed. This is the default status; 'tentative' - The event is tentatively confirmed; 'cancelled' - The event is cancelled.
+      - name: summary
+        description: Title of the event.
+      - name: updated
+        description: Last modification time of the event (as a RFC3339 timestamp).
+  - name: attendees
+    description: Event attendees.
+    fields:
+      - name: eventId
+        description: Calendar event ID the attendee is attached to - added after event is retrieved.
+      - name: calendarId
+        description: Calendar ID the attendee is attached to - added after event is retrieved.
+      - name: additionalGuests
+        description: Number of additional guests. The default is 0.
+      - name: comment
+        description: The attendee's response comment.
+      - name: displayName
+        description: The attendee's name, if available.
+      - name: email
+        description: The attendee's email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322.
+      - name: id
+        description: The attendee's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API
+      - name: optional
+        description: Whether this is an optional attendee. The default is False.
+      - name: organizer
+        description: Whether the attendee is the organizer of the event. The default is False.
+      - name: resource
+        description: Whether the attendee is a resource. The default is False.
+      - name: responseStatus
+        description: The attendee's response status. Possible values are 'needsAction' - The attendee has not responded to the invitation; 'declined' - The attendee has declined the invitation; 'tentative' - The attendee has tentatively accepted the invitation; 'accepted' - The attendee has accepted the invitation.
+      - name: self
+        description: Whether this entry represents the calendar on which this copy of the event appears. The default is False.

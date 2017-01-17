@@ -11,7 +11,7 @@ dataset:
           - name: type
             description: The type of data encoded in the coordinates property. This will be “Point” for Tweet coordinates fields.
       - name: created_at
-        description: UTC time when this Tweet was created. Format: Wed Aug 27 13:08:45 +0000 2008
+        description: UTC time when this Tweet was created. Format - Wed Aug 27 13:08:45 +0000 2008
       - name: favorite_count
         description: Indicates approximately how many times this Tweet has been liked by Twitter users.
       - name: favorited
